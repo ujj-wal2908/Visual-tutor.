@@ -72,15 +72,15 @@ Requirements:
 3.  **Informative & Clear:** Accurately represent the concept. Keep text concise.
 4.  **Safe for iframe:** Must run in \`<iframe srcDoc>\` sandbox. Avoid \`window.top\`/etc. Use unique IDs.
 5.  **Output ONLY Raw HTML:** No explanations, markdown, or other text outside the HTML snippet.
-6.  **Full Height Visualization:** *** CRITICAL: Style the content within your HTML snippet so it fills the entire available vertical height. Apply \`height: 100%\` to the \`html\` and \`body\` elements *within* the snippet's \`<style>\` tag. Ensure the main visual container element(s) also expand to use this full height (e.g., using \`min-height: 100%\`, flexbox \`flex-grow: 1\`, or similar techniques). The goal is NO significant empty space below the visualization content when placed in a tall container. ***
-7. **More visualization elements:** there should be more sensible visual interactive diagrams.
+6.  **Full Height Visualization:** *** CRITICAL: Style the content within your HTML snippet so it fills the entire available vertical height. Apply \`height: 100%\` to the \`html\` and \`body\` elements *within* the snippet's \`<style>\` tag. Ensure the main visual container element(s) also expand to use this full height (e.g., using \`min-height: 100%\`, flexbox \`flex-grow: 1\`, or similar techniques). The goal is NO significant empty space below the visualization content when placed in a tall container and it should be scrollable inside the container so the user can interact with the all.***
+7. **More visualization elements:** there should be more than one and diffrent type of visual elements in the snippet.
 8. **Reset button:** There should be a reset button to reset the visual elements so user can interact with then again and again.
 `;
 // --- END REFINED PROMPT ---
 
 
 const generateChatbotSystemPrompt = (topic, level, isPlayful) => {
-    const basePrompt = `You are an expert AI tutor specializing in "${topic}". The user's current expertise level is "${level}". Your goal is to help the user understand this topic better through conversation. Answer questions clearly, provide explanations, and ask clarifying questions if needed. Adapt your language and depth based on the user's level. You can understand and discuss images uploaded by the user. Use Markdown and LaTeX (using $ for inline and $$ for block math) for formatting when appropriate.`; // Added format hint
+    const basePrompt = `You are an expert AI tutor specializing in "${topic}". The user's current expertise level is "${level}". Your goal is to help the user understand this topic better through conversation. Answer questions clearly, provide explanations, and ask clarifying questions if needed. Adapt your language and depth based on the user's level. You can understand and discuss images uploaded by the user. Use Markdown for formatting when appropriate.`; // Added format hint
     const playfulPrefix = `Adopt a fun, encouraging, and slightly playful tone! Use occasional emojis where appropriate (but don't overdo it). Let's make learning an adventure! `;
     return isPlayful ? playfulPrefix + basePrompt : basePrompt;
 };

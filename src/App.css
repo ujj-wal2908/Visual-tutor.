@@ -1,4 +1,4 @@
-/* src/App.css - Visualization Height Increased */
+/* src/App.css - Visualization Height Increased to 700px, Includes Buffer Styles */
 
 /* ==================
    :root Variables (Assuming these exist in index.css or similar global file)
@@ -85,11 +85,11 @@
     width: 90%;
     max-width: 800px;
     flex-direction: row;
-    align-items: flex-end; /* Keep items aligned to the bottom */
+    align-items: flex-end;
     gap: 1rem;
     flex-wrap: wrap;
     justify-content: center;
-    padding-bottom: 1rem; /* Add some padding if needed */
+    padding-bottom: 1rem;
   }
 
 
@@ -98,7 +98,6 @@
      ================== */
   .form-group { flex-grow: 1; min-width: 180px; }
 
-  /* --- Input Label Styling (Centered) --- */
   .input-label {
     display: block;
     margin-bottom: 0.3rem;
@@ -111,7 +110,6 @@
   .theme-playful .input-label {
     color: var(--playful-text, #4E342E);
   }
-  /* ----------------------------------- */
 
   input[type="text"], select { width: 100%; padding: 0.8rem 1rem; border-radius: 10px; border: 1px solid rgba(0, 0, 0, 0.1); background-color: rgba(255, 255, 255, 0.85); font-family: var(--font-primary, sans-serif); font-size: 1em; color: var(--color-dark-brown, #4E342E); box-sizing: border-box; transition: border-color 0.3s ease, box-shadow 0.3s ease; }
   input[type="text"]::placeholder { color: rgba(78, 52, 46, 0.6); }
@@ -122,7 +120,6 @@
   /* ==================
      Button Styling
      ================== */
-  /* --- Button Container & Description Styling --- */
   .button-container {
     display: flex;
     flex-direction: column;
@@ -142,7 +139,6 @@
   .theme-playful .button-description {
     color: var(--playful-text, #4E342E);
   }
-  /* ------------------------------------------------- */
 
   .submit-button { border-radius: 12px; border: 1px solid transparent; padding: 0.8em 1.8em; font-size: 1.1em; font-weight: 500; font-family: inherit; color: var(--color-cream, #f5f5f5); cursor: pointer; transition: all 0.25s ease-out; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); position: relative; overflow: hidden; flex-shrink: 0; background: linear-gradient(135deg, var(--focused-button-bg-start, #0d6efd) 0%, var(--focused-button-bg-end, #0a58ca) 100%); }
   .theme-playful .submit-button { background: linear-gradient(135deg, var(--playful-button-bg-start, #ff7e5f) 0%, var(--playful-button-bg-end, #e65100) 100%); }
@@ -176,27 +172,26 @@
      ================== */
   .content-grid-two-cards { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; width: 100%; padding: 0; }
 
-  /* --- MODIFIED: Fixed Height for Cards --- */
+  /* Fixed Height for Cards */
   .content-card {
       text-align: left;
       animation: fadeInSlideUp 0.5s ease-out forwards;
       opacity: 0;
       color: var(--focused-text, #fff);
-      height: 500px; /* MODIFIED: Set fixed height */
+      height: 500px; /* Base height for MindMap/Chatbot */
       position: relative;
       display: flex;
       flex-direction: column;
   }
   .theme-playful .content-card { color: var(--playful-text, #4E342E); }
 
-  .card-header { display: flex; align-items: center; gap: 0.8rem; margin-bottom: 1rem; flex-shrink: 0; /* Prevent header shrinking */ }
+  .card-header { display: flex; align-items: center; gap: 0.8rem; margin-bottom: 1rem; flex-shrink: 0; }
   .card-icon { font-size: 1.8em; filter: drop-shadow(0 2px 3px rgba(0,0,0,0.2)); transition: transform 0.3s ease; color: var(--focused-icon-color, #fff); }
   .theme-playful .card-icon { color: var(--playful-icon-color, #e65100); }
   .theme-playful .content-card:hover .card-icon { transform: scale(1.1) rotate(-5deg); }
   .card-title { font-family: var(--font-primary, sans-serif); font-size: 1.3em; font-weight: 700; margin: 0; }
-  .card-description { font-size: 0.95em; opacity: 0.9; line-height: 1.5; margin-bottom: 1rem; /* Reduced margin */ flex-grow: 0; flex-shrink: 0; }
+  .card-description { font-size: 0.95em; opacity: 0.9; line-height: 1.5; margin-bottom: 1rem; flex-grow: 0; flex-shrink: 0; }
 
-  /* --- MODIFIED: Card Content Area --- */
   .card-content-area {
       flex-grow: 1;
       display: flex;
@@ -216,7 +211,6 @@
   /* ==================
      Chatbot Styles
      ================== */
-  /* --- MODIFIED: Chatbot UI Container --- */
   .chatbot-ui {
       display: flex;
       flex-direction: column;
@@ -229,10 +223,8 @@
       background-color: rgba(255, 255, 255, 0.1);
   }
 
-  /* Header (if used inside Chatbot.jsx) */
   .chatbot-header { padding: 0.75rem 1.2rem; font-weight: 600; font-size: 1.1em; border-bottom: 1px solid var(--focused-panel-border, rgba(255, 255, 255, 0.18)); flex-shrink: 0; }
 
-  /* --- MODIFIED: Chat Area --- */
   .chat-area {
       flex-grow: 1;
       padding: 1rem;
@@ -269,7 +261,6 @@
   @keyframes bounce { 0%, 80%, 100% { transform: scale(0); } 40% { transform: scale(1.0); } }
 
 
-  /* --- MODIFIED: Chat Input Area --- */
   .chat-input-area {
       display: flex;
       align-items: flex-end;
@@ -301,22 +292,20 @@
   #remove-image-button { position: absolute; top: -7px; right: -7px; background-color: rgba(255, 0, 0, 0.8); color: white; border: 1px solid rgba(255,255,255,0.5); border-radius: 50%; width: 18px; height: 18px; font-size: 12px; line-height: 16px; text-align: center; cursor: pointer; font-weight: bold; padding: 0; box-shadow: 0 1px 2px rgba(0,0,0,0.3); display: flex; align-items: center; justify-content: center; }
 
   /* ==================
-     Visualization Container (Full Width Below Grid)
+     Visualization Container
      ================== */
-  /* --- MODIFIED: Increased Height --- */
   .visualization-container {
       width: 100%;
       max-width: 1100px;
       margin-top: 0;
       animation: fadeInSlideUp 0.5s ease-out 0.6s forwards;
       opacity: 0;
-      /* ---- MODIFIED: Height Increased to 700px ---- */
+      /* ---- Height Increased to 700px ---- */
       height: 700px;
-      /* ------------------------------------------- */
-      /* It also inherits styles from .content-card applied in App.jsx */
+      /* ----------------------------------- */
   }
   .visualization-container .card-content-area {
-      height: 100%; /* Fills the new height */
+      height: 100%;
       min-height: 0;
       overflow: hidden;
   }
@@ -340,6 +329,50 @@
       border: 1px solid rgba(211, 47, 47, 1) !important;
       color: white !important;
       box-shadow: 0 1px 2px rgba(0,0,0,0.1) !important;
+  }
+
+
+  /* ==================
+     Loader Animation (For Visualization Buffer)
+     ================== */
+
+  @keyframes dotPulseBuffer {
+    0%, 80%, 100% {
+      transform: scale(0.6);
+      opacity: 0.6;
+    }
+    40% {
+      transform: scale(1.0);
+      opacity: 1;
+    }
+  }
+
+  .loading-dots-buffer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .loading-dots-buffer .dot {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    margin: 0 5px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 50%;
+    animation: dotPulseBuffer 1.4s infinite ease-in-out both;
+  }
+
+  .loading-dots-buffer .dot:nth-child(1) {
+    animation-delay: -0.32s;
+  }
+
+  .loading-dots-buffer .dot:nth-child(2) {
+    animation-delay: -0.16s;
+  }
+
+  .loading-dots-buffer .dot:nth-child(3) {
+    animation-delay: 0s;
   }
 
 
