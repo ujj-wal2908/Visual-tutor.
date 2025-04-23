@@ -1,0 +1,172 @@
+/* src/LandingPage.css (New File) */
+
+.landing-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    padding: 3rem 2rem;
+    box-sizing: border-box;
+    text-align: center;
+    /* Example background - choose one that fits */
+    background: linear-gradient(145deg, #2a2a72 0%, #009ffd 100%);
+    color: #f0f0f0;
+    font-family: var(--font-primary, sans-serif); /* Use global font */
+    overflow-x: hidden; /* Prevent horizontal scroll from animations */
+  }
+  
+  .hero-section {
+    margin-bottom: 4rem;
+    max-width: 700px;
+  }
+  
+  .hero-section h1 {
+    font-size: 3.5em; /* Adjust as needed */
+    margin-bottom: 1rem;
+    font-weight: 700;
+    /* Use playful font if desired for landing */
+    /* font-family: var(--font-headings-playful, cursive); */
+    color: #fff;
+     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  }
+  
+  .hero-section p {
+    font-size: 1.2em;
+    opacity: 0.9;
+    line-height: 1.6;
+  }
+  
+  .workflow-section {
+    margin-bottom: 4rem;
+    width: 100%;
+    max-width: 1000px;
+  }
+  
+  .workflow-section h2 {
+    font-size: 2.5em;
+    margin-bottom: 2.5rem;
+    color: #fff;
+    position: relative; /* For pseudo-element */
+    display: inline-block; /* Shrink wrap title */
+    padding-bottom: 0.5rem;
+  }
+  
+  /* Optional underline effect */
+  .workflow-section h2::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 4px;
+      background-color: var(--color-teal-accent, #00F5D4);
+      border-radius: 2px;
+  }
+  
+  
+  .steps-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); /* Responsive grid */
+    gap: 2.5rem;
+    width: 100%;
+  }
+  
+  .step {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 2rem 1.5rem;
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .step:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
+  }
+  
+  
+  .step-icon {
+    font-size: 2.5em;
+    display: block;
+    margin-bottom: 1rem;
+  }
+  
+  .step h3 {
+    font-size: 1.4em;
+    margin-bottom: 0.8rem;
+    font-weight: 700;
+    color: #fff;
+  }
+  
+  .step p {
+    font-size: 1em;
+    line-height: 1.5;
+    opacity: 0.85;
+  }
+  
+  .landing-footer {
+    margin-top: auto; /* Pushes footer towards bottom */
+    padding-top: 3rem;
+    width: 100%;
+  }
+  
+  .landing-footer h2 {
+    font-size: 2em;
+    margin-bottom: 1.5rem;
+    color: #fff;
+  }
+  
+  .cta-button {
+    display: inline-block;
+    padding: 1em 2.5em;
+    font-size: 1.1em;
+    font-weight: 700;
+    color: #333; /* Dark text on light button */
+    background: linear-gradient(135deg, var(--color-teal-accent, #00F5D4), #00c4a6);
+    border: none;
+    border-radius: 50px; /* Pill shape */
+    text-decoration: none;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 245, 212, 0.4);
+  }
+  
+  .cta-button:hover {
+    transform: translateY(-3px) scale(1.03);
+    box-shadow: 0 6px 20px rgba(0, 245, 212, 0.5);
+     background: linear-gradient(135deg, #1affec, var(--color-teal-accent, #00F5D4));
+  }
+  
+  
+  /* --- Responsive Adjustments --- */
+  @media (max-width: 768px) {
+    .hero-section h1 {
+      font-size: 2.8em;
+    }
+    .workflow-section h2 {
+      font-size: 2em;
+    }
+     .steps-container {
+        grid-template-columns: 1fr; /* Stack steps */
+        gap: 1.5rem;
+     }
+  }
+  
+  @media (max-width: 480px) {
+      .landing-container {
+          padding: 2rem 1rem;
+      }
+       .hero-section h1 {
+          font-size: 2.2em;
+      }
+      .hero-section p {
+          font-size: 1em;
+      }
+      .step h3 {
+          font-size: 1.2em;
+      }
+  }

@@ -1,0 +1,137 @@
+/* === Import Google Fonts === */
+/* Added at the very top */
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@400;500;700&display=swap');
+
+/* Root variables define the available palette and default values */
+:root {
+  /* === Playful Theme Colors === */
+  --playful-bg-start: var(--color-amber-yellow);
+  --playful-bg-end: var(--color-deep-orange);
+  --playful-panel-bg: rgba(255, 248, 225, 0.65); /* Semi-transparent cream */
+  --playful-panel-border: rgba(255, 255, 255, 0.25);
+  --playful-panel-shadow: rgba(78, 52, 46, 0.25);
+  --playful-text: var(--color-dark-brown);
+  --playful-placeholder-bg: rgba(255, 255, 255, 0.5);
+  --playful-placeholder-icon: var(--color-vibrant-orange);
+  --playful-button-bg-start: var(--color-deep-orange);
+  --playful-button-bg-end: var(--color-vibrant-orange);
+  --playful-button-hover-bg-start: var(--color-vibrant-orange);
+  --playful-button-hover-bg-end: var(--color-amber-yellow);
+  --playful-switch-bg: var(--color-amber-yellow);
+  --playful-icon-color: var(--color-deep-orange);
+
+  /* === Focused Theme Colors === */
+  --focused-bg-start: #4e54c8; /* Blue */
+  --focused-bg-end: #a8529a;   /* Magenta-ish */
+  --focused-panel-bg: rgba(255, 255, 255, 0.15); /* Subtle white */
+  --focused-panel-border: rgba(255, 255, 255, 0.3);
+  --focused-panel-shadow: rgba(0, 0, 0, 0.3);
+  --focused-text: #f0f0f0; /* Light text for dark background */
+  --focused-placeholder-bg: rgba(0, 0, 0, 0.2);
+  --focused-placeholder-icon: var(--color-teal-accent);
+  --focused-button-bg-start: #6a6eff; /* Brighter Blue */
+  --focused-button-bg-end: #a8529a; /* Magenta */
+  --focused-button-hover-bg-start: #8a8eff;
+  --focused-button-hover-bg-end: #c872bA;
+  --focused-switch-bg: #6a6eff;
+  --focused-icon-color: var(--color-teal-accent);
+
+
+  /* === Base Colors (Shared) === */
+  --color-vibrant-orange: #FFA726;
+  --color-orange-darker: #ef6c00; /* Added darker variant */
+  --color-deep-orange: #FF7043;
+  --color-amber-yellow: #FFCA28;
+  --color-cream: #FFF8E1;
+  --color-dark-brown: #4E342E;
+  --color-dark-brown-rgb: 78, 52, 46; /* Added RGB version */
+  --color-teal-accent: #00F5D4;
+  --color-teal-accent-glow: rgba(0, 245, 212, 0.7);
+  --color-teal-darker: #00bfa5; /* Added darker variant */
+
+
+  /* === Fonts === */
+  --font-primary: 'Poppins', system-ui, Avenir, Helvetica, Arial, sans-serif;
+  --font-headings-focused: 'Poppins', system-ui, Avenir, Helvetica, Arial, sans-serif;
+  --font-headings-playful: 'Pacifico', cursive;
+  --mono-font: 'Courier New', Courier, monospace; /* Added monospace font */
+
+  /* --- Global Font Settings --- */
+  font-family: var(--font-primary);
+  line-height: 1.6;
+  font-weight: 400;
+
+  /* Default text/bg - overridden by theme classes */
+  color: var(--focused-text);
+  background-color: #1a1d2e; /* Dark base for focused */
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+a {
+  font-weight: 500;
+  color: var(--color-teal-accent);
+  text-decoration: none;
+  transition: color 0.25s, filter 0.25s;
+}
+a:hover {
+  /* Color depends on theme, may need specific override in App.css if desired */
+  filter: drop-shadow(0 0 0.5em var(--color-teal-accent-glow));
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+  /* Gradient set dynamically in App.css based on theme */
+  transition: background 0.5s ease; /* Smooth transition for gradient change */
+}
+
+h1 {
+  /* Font family set dynamically in App.jsx via theme class */
+  font-size: 3.8em;
+  line-height: 1.1;
+  /* Color set dynamically */
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+  transition: color 0.5s ease;
+}
+
+/* Base button styles - Specific backgrounds/hovers defined in App.css */
+button {
+  border-radius: 12px;
+  border: 1px solid transparent;
+  padding: 0.8em 1.5em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  color: var(--color-cream); /* Default light text */
+  background-color: #333; /* Fallback/base background */
+  cursor: pointer;
+  transition: border-color 0.25s, background 0.25s, box-shadow 0.25s, transform 0.15s ease-out;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+button:hover {
+  border-color: var(--color-teal-accent);
+  /* Background hover set dynamically */
+  box-shadow: 0 0 15px var(--color-teal-accent-glow);
+  transform: translateY(-2px);
+}
+
+/* Focus style applies generally */
+button:focus,
+button:focus-visible {
+  outline: 4px auto var(--color-teal-accent); /* Default focus outline */
+}
+
+/* Theme-specific focus override */
+.theme-playful button:focus,
+.theme-playful button:focus-visible {
+   outline-color: var(--color-vibrant-orange);
+}
