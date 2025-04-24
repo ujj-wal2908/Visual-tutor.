@@ -22,17 +22,7 @@ This project is a React application built with Vite that utilizes AI models (Gro
 *   **Mathematical Rendering:** KaTeX (`katex`)
 *   **Animation:** Framer Motion (`framer-motion`)
 
-## Setup
 
-1.  **Clone the repository:**
-    ```bash
-    git clone <repository_url>
-    cd <repository_directory>
-    ```
-2.  **Install dependencies:**
-    ```bash
-    npm install
-    ```
 
 ## Configuration
 
@@ -56,7 +46,7 @@ To start the development server:
 ```bash
 npm run dev
 
-**Project Sturucture**
+**Project Structure**
 .
 ├── public/             # Static assets
 ├── src/
