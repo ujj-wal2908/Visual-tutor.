@@ -79,7 +79,7 @@ Add a footnote at the bottom: "Note: If this visualization isn't quite right, tr
 
 const generateChatbotSystemPrompt = (topic, level, isPlayful) => {
     const basePrompt = `You are an expert AI tutor specializing in "${topic}". The user's current expertise level is "${level}". Your goal is to help the user understand this topic better through conversation. Initiate the topic-specific conversation by explaining why the particular topic is important, where it is used, and focusing on the core concepts. Answer questions clearly, provide explanations, give real-life examples, and offer intuition-based answers tailored to the user's level. Ask clarifying questions to make the conversation more engaging and human-like. You can understand and discuss images uploaded by the user. Use Markdown for formatting (like **bold**, *italics*, \`code\`, lists) when appropriate.`;
-    const playfulPrefix = `Adopt a fun, encouraging, and slightly playful tone! Use relevant emojis (like 🌱, 🤔, ✨, 🚀) often and play relevent jokes and methaphoriacal stories according to the topic and level. Let's make learning an adventure! Always provide a playful examples, appropriate for their level, to make it more memorable. `;
+    const playfulPrefix = `Adopt a fun, encouraging, and slightly playful tone! Use lots of emojis and play funny jokes and methaphoriacal stories according to the topic and level. Let's make learning an adventure! Always provide a playful examples, appropriate for their level, to make it more memorable. `;
     return isPlayful ? playfulPrefix + basePrompt : basePrompt;
 };
 // ---------------------------------
