@@ -263,7 +263,7 @@ function App() {
     // --- Return Statement (JSX) ---
     return (
         <div className={`app-container`}>
-            <h1>Craft Your Learning Adventure! <span role="img" aria-label={isPlayful ? 'party popper' : 'robot'}>{isPlayful ? '🥳' : '🤖'}</span></h1>
+            <h1>Visual-Tutor<span role="img" aria-label={isPlayful ? 'party popper' : 'robot'}>{isPlayful ? '🥳' : '🤖'}</span></h1>
 
             {/* API Key Missing Errors */}
             {isGroqKeyMissing && <p className="error-message critical-error">⚠️ Groq API Key missing. Mind Map & Chatbot disabled.</p>}
