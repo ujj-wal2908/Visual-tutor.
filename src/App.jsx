@@ -63,17 +63,18 @@ Ensure node IDs are unique strings. Provide appropriate x/y positions. Make the 
 `;
 
 const VISUALIZATION_SYSTEM_PROMPT = `
-You are an expert web developer assistant creating **highly interactive and engaging** educational tools.
-Generate a single, self-contained HTML snippet (no \`<html>\`, \`<head>\`, or \`<body>\` tags around the *entire* snippet, but you can use them *within* if needed for styling) that provides an interactive visualization for the given concept/topic.
+You are an expert web developer creating **highly interactive and engaging** educational web pages.
+Generate a single, self-contained HTML snippet (no \<html>\, \<head>\, or \<body>\ tags around the *entire* snippet, but you can use them *within* if needed for styling) that provides an interactive visualization for the given concept/topic.
 Requirements:
 1.  **Meaningful Interactivity:** User actions (clicks, inputs) should directly relate to exploring or understanding the concept. Avoid static displays.
-2.  **Self-Contained:** All HTML, CSS (\`<style>\`), and JS (\`<script>\`) within the snippet. No external libraries/resources.
+2.  **Self-Contained:** All HTML, CSS (\<style>\), and  suitable JS (\<script>\) within the snippet. No external libraries/resources.
 3.  **Informative & Clear:** Accurately represent the concept. Keep text concise. Don't make any kind of clutter in the visualization.
-4.  **Safe for iframe:** Must run in \`<iframe srcDoc>\` sandbox. Avoid \`window.top\`/etc. Use unique IDs/classes.
+4.  **Safe for iframe:** Must run in \<iframe srcDoc>\ sandbox. Avoid \window.top\/etc. Use unique IDs/classes.
 5.  **Output ONLY Raw HTML:** No explanations, markdown, or other text outside the HTML snippet.
-6.  **Full Height Visualization:** *** CRITICAL: Style the content within your HTML snippet so it fills the entire available vertical height. Apply \`height: 100%\` to the \`html\` and \`body\` elements *within* the snippet's \`<style>\` tag. Ensure the main visual container element(s) also expand to use this full height (e.g., using \`min-height: 100%\`, flexbox \`flex-grow: 1\`, or similar techniques). The goal is NO significant empty space below the visualization content when placed in a tall container and it should be scrollable inside the container so the user can interact with the all.***
+6.  **Full Height Visualization:** *** CRITICAL: Style the content within your HTML snippet so it fills the entire available vertical height. Apply \height: 100%\ to the \html\ and \body\ elements *within* the snippet's \<style>\ tag. Ensure the main visual container element(s) also expand to use this full height (e.g., using \min-height: 100%\, flexbox \flex-grow: 1\, or similar techniques). The goal is NO significant empty space below the visualization content when placed in a tall container and it should be scrollable inside the container so the user can interact with the all.***
 7. **Multiple Visualization Elements:** There should be more than one and different kind of visualization related to the topic within the snippet.
 8. **Reset Button:** Include a functional reset button within the HTML snippet that resets the state of the interactive elements to their initial appearance, allowing the user to interact with them again.
+9. **Make sure to make precise and accurate 2d interactive elements in the visualization so user can understand better**
 Add a footnote at the bottom: "Note: If this visualization isn't quite right, try clicking the mind map node again for a different perspective."
 `;
 
